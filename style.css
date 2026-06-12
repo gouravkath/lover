@@ -1,0 +1,76 @@
+/* author - deepak tiwari */
+:root {
+  --light-pink: #ffe5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+  
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe5e5;
+  background-color: var(--light-pink);
+  overflow: hidden;
+  position: relative;
+}
+
+.heart {
+  position: absolute;
+  font-size: 30px;
+  color: rgba(255, 117, 151, 0.4);
+  animation: float 6s linear infinite;
+  bottom: -50px;
+  z-index: 0;
+  pointer-events: none; /* Crucial: Allows clicks to pass through hearts to your buttons */
+  user-select: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+  z-index: 1; /* Keeps content layered above the floating hearts */
+}
+  
+.container .tenor-gif-embed {
+  max-width: 200px;
+}
+  
+.container .btn {
+  display: flex;
+  gap: 25px;
+  position: relative;
+  min-height: 50px;  
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.btn a {
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+}
+#move-random {
+  z-index: 10;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
